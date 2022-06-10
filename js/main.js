@@ -73,11 +73,13 @@ if (isFirefox = navigator.userAgent.indexOf("Firefox") > 0) {
     link.type = 'text/css';
     head.appendChild(link);
     window.addEventListener('load', function () {
-        iziToast.show({
-            timeout: 8000,
-            iconUrl: './img/icon/warn.png',
-            message: '您正在使用火狐浏览器，部分功能可能不支持'
-        });
+        setTimeout(function () {
+            iziToast.show({
+                timeout: 8000,
+                icon: "fa-solid fa-circle-exclamation",
+                message: '您正在使用火狐浏览器，部分功能可能不支持'
+            });
+        }, 3800);
     }, false)
 }
 
@@ -93,7 +95,7 @@ fetch('https://v1.hitokoto.cn?max_length=24')
 //获取天气
 //每日限量 100 次
 //请前往 https://www.tianqiapi.com/ 申请（免费）
-fetch('https://www.yiketianqi.com/free/day?appid=43986679&appsecret=TksqGZT7&unescape=1')
+fetch('https://www.yiketianqi.com/free/day?appid=43656176&appsecret=I42og6Lm&unescape=1')
     .then(response => response.json())
     .then(data => {
         $('#wea_text').html(data.wea)
@@ -207,7 +209,7 @@ $('#switchmenu').on('click', function () {
     switchmenu = !switchmenu;
     if (switchmenu) {
         $('#row').attr('class', 'row menus');
-        $("#menu").html("<i class='iconfont icon-times'></i>");
+        $("#menu").html("<i class='fa-solid fa-xmark'></i>");
     } else {
         $('#row').attr('class', 'row');
         $("#menu").html("<i class='iconfont icon-bars'>");
@@ -232,7 +234,7 @@ window.addEventListener('load', function () {
         //关闭移动端样式
         if (window.innerWidth >= 600) {
             $('#row').attr('class', 'row');
-            $("#menu").html("<i class='iconfont icon-bars'>");
+            $("#menu").html("<i class='fa-solid fa-bars'></i>");
             //移除移动端切换功能区
             $('#rightone').attr('class', 'row rightone');
         }
@@ -273,7 +275,7 @@ $("#more").hover(function () {
 document.oncontextmenu = function () {
     iziToast.show({
         timeout: 2000,
-        iconUrl: './img/icon/warn.png',
+        icon: "fa-solid fa-circle-exclamation",
         message: '为了浏览体验，本站禁用右键'
     });
     return false;
@@ -295,7 +297,7 @@ for (var day of days) {
         window.addEventListener('load', function () {
             iziToast.show({
                 timeout: 14000,
-                iconUrl: './img/icon/candle.png',
+                icon: "fa-solid fa-candle-holder",
                 message: '今天是中国国家纪念日'
             });
         }, false);
@@ -315,7 +317,7 @@ color: rgb(244,167,89);
 var styleContent = `
 color: rgb(30,152,255);
 `
-var title1 = '無名の主页'
+var title1 = '即刻の主页'
 var title2 = `
  _____ __  __  _______     ____     __
 |_   _|  \\/  |/ ____\\ \\   / /\\ \\   / /
@@ -325,15 +327,8 @@ var title2 = `
 |_____|_|  |_|_____/   |_|      |_|                                                     
 `
 var content = `
-版 本 号：2.2
-更新日期：2022-04-12
-
-更新说明：
-1. 新增 壁纸个性化设置
-2. 新增 音乐播放器支持音量控制
-3. 优化 部分动画及细节
-4. 优化 页面加载缓慢
-5. 优化 音乐延迟加载
+版 本 号：3.0
+更新日期：2022-05-20
 
 主页:  https://www.imsyy.top
 Github:  https://github.com/imsyy/home
