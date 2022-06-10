@@ -95,7 +95,7 @@ fetch('https://v1.hitokoto.cn?max_length=24')
 //获取天气
 //每日限量 100 次
 //请前往 https://www.tianqiapi.com/ 申请（免费）
-fetch('https://www.yiketianqi.com/free/day?appid=43656176&appsecret=I42og6Lm&unescape=1')
+fetch('https://www.yiketianqi.com/free/day?appid=63299166&appsecret=I2EVtT7D&unescape=1')
     .then(response => response.json())
     .then(data => {
         $('#wea_text').html(data.wea)
